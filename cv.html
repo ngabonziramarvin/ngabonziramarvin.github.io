@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Marvin Ngabonzira</title>
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+/* Override body bg to match CV aesthetic */
+.page-wrap { padding-top: 64px; }
+.cv-header {
+  padding: 40px 0 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.cv-header p { color: var(--text-dim); font-size: 14px; }
+.cv-frame-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cv-frame-wrap iframe {
+  width: 100%;
+  height: calc(100vh - 64px);
+  border: none;
+  display: block;
+}
+.cv-fallback {
+  padding: 60px 40px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <div class="container">
+    <div class="cv-header">
+      <div>
+        <div class="label">Showcase Portfolio</div>
+        <h1 style="font-size:clamp(28px,4vw,42px);margin-top:8px">Curriculum Vitae</h1>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="marvin-ngabonzira-cv.html" target="_blank" class="btn btn-c">Open Full Screen ↗</a>
+        <a href="#" class="btn btn-g">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cv-frame-wrap">
+      <iframe src="marvin-ngabonzira-cv.html" title="Marvin Ngabonzira Showcase CV"></iframe>
+    </div>
+  </div>
+</div>
+<script src="/assets/nav.js"></script>
+</body>
+</html>

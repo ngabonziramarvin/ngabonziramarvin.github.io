@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Marvin Ngabonzira</title>
+<meta name="description" content="Technical reports, undergraduate research, and independent neuro-engineering research by Marvin Ngabonzira.">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.page-hero{padding:80px 0 60px}
+.page-hero h1{font-size:clamp(42px,7vw,80px);letter-spacing:-0.03em;margin-bottom:16px}
+
+/* Report cards */
+.report-card{background:var(--surface);border:1px solid var(--border);margin-bottom:20px;transition:all 0.3s;display:block}
+.report-card:hover{background:var(--surface2);border-color:rgba(0,229,255,0.2)}
+.report-inner{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding:28px 32px}
+.report-id{font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px}
+.report-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:8px}
+.report-meta{font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-bottom:14px;letter-spacing:0.06em}
+.report-meta span{margin-right:16px}
+.report-desc{font-size:14.5px;color:var(--text-mid);line-height:1.7;max-width:640px}
+.report-links{display:flex;flex-direction:column;gap:8px;min-width:120px}
+.report-links a{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,229,255,0.2);padding:8px 14px;text-align:center;transition:all 0.2s}
+.report-links a:hover{background:var(--cyan);color:var(--bg)}
+
+/* Project card */
+.project-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--magenta);padding:28px 32px;margin-bottom:20px;transition:all 0.3s}
+.project-card:hover{background:var(--surface2)}
+.proj-id{font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--magenta);margin-bottom:10px}
+.proj-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:8px}
+.proj-meta{font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-bottom:14px}
+.proj-desc{font-size:14.5px;color:var(--text-mid);line-height:1.7}
+.proj-badges{margin-top:14px}
+
+/* Focus clusters */
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.focus-item{background:var(--surface);padding:24px 22px}
+.focus-icon{font-size:22px;margin-bottom:10px}
+.focus-title{font-size:14px;font-weight:700;margin-bottom:6px}
+.focus-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
+
+@media(max-width:768px){
+  .report-inner{grid-template-columns:1fr}
+  .report-links{flex-direction:row}
+  .focus-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="container">
+    <div class="page-hero">
+      <div class="label au">Publications & Projects</div>
+      <h1 class="au d1">Research</h1>
+      <p class="au d2" style="max-width:540px">Technical reports, undergraduate research, and independent neuro-engineering investigations. All reports are peer-review-adjacent and published with DOIs on Zenodo.</p>
+    </div>
+  </div>
+
+  <!-- TECHNICAL REPORTS -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head au">
+        <div class="label">The Science Blueprint Series</div>
+        <h2>Technical Reports</h2>
+        <div class="sec-rule"></div>
+      </div>
+
+      <div class="report-card card-cyan au d1">
+        <div class="report-inner">
+          <div>
+            <div class="report-id" style="color:var(--cyan)">TSB-TR-2026-002 · Technical Report</div>
+            <div class="report-title">Neural Data Privacy and BCI Surveillance Risks: Implications for Emerging Brain-Computer Interface Architectures</div>
+            <div class="report-meta">
+              <span>📍 Zenodo</span>
+              <span>DOI: 10.5281/zenodo.XXXXXXX</span>
+              <span>March 2026</span>
+              <span>Cross-posted: ResearchGate · SSRN</span>
+            </div>
+            <div class="report-desc">Examines the emergent threat landscape at the intersection of consumer-grade BCI adoption and neural data harvesting. Analyzes surveillance vectors through a fictional company case study (MindSync Corp.), proposes a layered framework for neural privacy by design, and assesses regulatory gaps in existing data protection legislation.</div>
+            <div style="margin-top:14px">
+              <span class="tag tag-c">Neural Privacy</span>
+              <span class="tag tag-c">BCI</span>
+              <span class="tag tag-c">Surveillance</span>
+              <span class="tag tag-c">Data Protection</span>
+            </div>
+          </div>
+          <div class="report-links">
+            <a href="https://zenodo.org" target="_blank">Zenodo ↗</a>
+            <a href="https://researchgate.net" target="_blank">ResearchGate ↗</a>
+            <a href="https://ssrn.com" target="_blank">SSRN ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-card card-cyan au d2">
+        <div class="report-inner">
+          <div>
+            <div class="report-id" style="color:var(--cyan)">TSB-TR-2026-001 · Technical Report</div>
+            <div class="report-title">Neuralink N1 Electrode Thread Retraction: Failure Mode Analysis and Implications for Long-Term Intracortical BCI Reliability</div>
+            <div class="report-meta">
+              <span>📍 Zenodo</span>
+              <span>DOI: 10.5281/zenodo.XXXXXXX</span>
+              <span>January 2026</span>
+              <span>Cross-posted: ResearchGate</span>
+            </div>
+            <div class="report-desc">Technical post-mortem of the electrode thread retraction event observed in Neuralink's first human implant trial. Investigates biomechanical stress factors, glial scarring dynamics, and the resulting signal degradation — drawing lessons for future flexible electrode substrate design.</div>
+            <div style="margin-top:14px">
+              <span class="tag tag-c">Neuralink</span>
+              <span class="tag tag-c">Electrode Design</span>
+              <span class="tag tag-c">Failure Analysis</span>
+              <span class="tag tag-c">Intracortical BCI</span>
+            </div>
+          </div>
+          <div class="report-links">
+            <a href="https://zenodo.org" target="_blank">Zenodo ↗</a>
+            <a href="https://researchgate.net" target="_blank">ResearchGate ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNDERGRADUATE PROJECT -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head au">
+        <div class="label">Kyambogo University · TEMB 3201</div>
+        <h2>Undergraduate Project</h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="project-card au d1">
+        <div class="proj-id">TEMB 3201 · Group Project · In Progress · 2026</div>
+        <div class="proj-title">Adaptive Motor-Imagery BCI Using Riemannian Geometry (A-MDRM System)</div>
+        <div class="proj-meta">Kyambogo University · Dept. of Mechatronics & Biomedical Engineering · Supervisor: Mr. Bagaiga Richard · Team: Among Mary Shila, Econgu Emmanuel, Marvin Ngabonzira</div>
+        <div class="proj-desc">Developing a session-adaptive EEG Motor Imagery classification system leveraging Riemannian geometry on covariance matrices for subject-independent decoding. Implements MOABB's BCI Competition IV Dataset 2a pipeline with hardware-in-the-loop validation via Arduino. The system addresses session-to-session variability — one of the primary barriers to real-world BCI deployment.</div>
+        <div class="proj-badges">
+          <span class="tag tag-m">EEG</span>
+          <span class="tag tag-m">Motor Imagery</span>
+          <span class="tag tag-m">Riemannian Geometry</span>
+          <span class="tag tag-m">MOABB</span>
+          <span class="tag tag-m">Arduino</span>
+          <span class="tag tag-g">Target: IEEE TNSRE</span>
+          <span class="tag tag-g">Target: J. Neural Eng.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH FOCUS -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head au">
+        <div class="label">Independent inquiry</div>
+        <h2>Research Focus Areas</h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="focus-grid au d1">
+        <div class="focus-item">
+          <div class="focus-icon">⚡</div>
+          <div class="focus-title">Brain-Computer Interfaces</div>
+          <div class="focus-desc">From Utah Arrays to flexible polymer electrodes — the hardware problem of connecting silicon to neurons without killing either.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">🔒</div>
+          <div class="focus-title">Neural Data Privacy</div>
+          <div class="focus-desc">As BCIs enter consumer markets, who owns the data decoded from your brain? Regulatory gaps, surveillance vectors, and privacy-by-design.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">📐</div>
+          <div class="focus-title">Riemannian Geometry in ML</div>
+          <div class="focus-desc">Treating EEG covariance matrices as points on a curved manifold — a more principled approach to session-to-session BCI adaptation.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">🧠</div>
+          <div class="focus-title">Neuromorphic Computing</div>
+          <div class="focus-desc">Chips that compute like brains: spike-based processing, in-memory computation, and the 20-Watt efficiency question.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">⚖️</div>
+          <div class="focus-title">Von Neumann vs. Biological Architecture</div>
+          <div class="focus-desc">The memory wall, the bandwidth bottleneck, and why the brain's distributed architecture is still computationally superior in most real-world tasks.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">🔬</div>
+          <div class="focus-title">Organoid Intelligence</div>
+          <div class="focus-desc">Lab-grown brain organoids as computational substrates — the most philosophically uncomfortable frontier in neuro-engineering.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="/assets/nav.js"></script>
+</body>
+</html>
