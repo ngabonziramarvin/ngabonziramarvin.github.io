@@ -1,4 +1,3 @@
-// --- START OF FILE site/assets/nav.js ---
 const navHTML = `
 <nav>
   <a href="/" class="nav-logo">MARVIN <span>NGABONZIRA</span></a>
@@ -15,7 +14,29 @@ const navHTML = `
 </nav>
 `;
 
+const footerHTML = `
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <div class="foot-brand">Marvin <span>Ngabonzira</span></div>
+      <div class="foot-links">
+        <a href="https://orcid.org/0009-0000-2708-2825" target="_blank">ORCID</a>
+        <a href="https://www.researchgate.net/profile/Marvin-Ngabonzira" target="_blank">ResearchGate</a>
+        <a href="https://www.linkedin.com/in/ngabonziramarvin" target="_blank">LinkedIn</a>
+        <a href="https://instagram.com/marvinngabonzira" target="_blank">IG</a>
+        <a href="https://tiktok.com/@marvinngabonzira" target="_blank">TikTok</a>
+      </div>
+      <div class="foot-copy">© 2026 The Science Blueprint</div>
+    </div>
+  </div>
+</footer>
+`;
+
+// Inject Nav at top
 document.body.insertAdjacentHTML('afterbegin', navHTML);
+
+// Inject Footer at bottom
+document.body.insertAdjacentHTML('beforeend', footerHTML);
 
 // Highlight active link
 const currentPath = window.location.pathname;
