@@ -6,8 +6,8 @@ const navHTML = `
     <a href="/">Home</a>
     <a href="/about.html">About</a>
     <a href="/research.html">Research</a>
+    <a href="/cv.html">CV</a>
     <a href="https://ngabonziramarvin.substack.com" target="_blank">Newsletter ↗</a>
-    <a href="https://www.youtube.com/@myscienceblueprint" target="_blank">YouTube ↗</a>
   </div>
   <button class="nav-burger">
     <span></span><span></span><span></span>
