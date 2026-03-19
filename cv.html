@@ -6,34 +6,22 @@
 <title>CV — Marvin Ngabonzira</title>
 <link rel="stylesheet" href="/assets/style.css">
 <style>
-/* Override body bg to match CV aesthetic */
 .page-wrap { padding-top: 64px; }
 .cv-header {
   padding: 40px 0 24px;
-  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
 }
-.cv-header p { color: var(--text-dim); font-size: 14px; }
-.cv-frame-wrap {
+.cv-fallback {
   background: var(--surface);
   border: 1px solid var(--border);
-  margin: 32px 0;
-  position: relative;
-  overflow: hidden;
-}
-.cv-frame-wrap iframe {
-  width: 100%;
-  height: calc(100vh - 64px);
-  border: none;
-  display: block;
-}
-.cv-fallback {
+  border-left: 3px solid var(--cyan);
   padding: 60px 40px;
   text-align: center;
+  margin: 32px 0 80px;
 }
 </style>
 </head>
@@ -41,23 +29,21 @@
 <div class="page-wrap">
   <div class="container">
     <div class="cv-header">
-      <div>
-        <div class="label">Showcase Portfolio</div>
+      <div class="au">
+        <div class="label">Professional Portfolio</div>
         <h1 style="font-size:clamp(28px,4vw,42px);margin-top:8px">Curriculum Vitae</h1>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="cv-frame-wrap">
-      <div class="cv-fallback">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:20px">CV · Coming Soon</div>
-        <h2 style="font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2">Currently being prepared<br>for public release.</h2>
-        <p style="font-size:14px;color:var(--text-mid);line-height:1.7;max-width:480px;margin:0 auto 28px">A full showcase CV — covering my engineering background, research output, and The Science Blueprint — will be available here for download shortly.</p>
-        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-          <a href="https://www.linkedin.com/in/ngabonziramarvin" target="_blank" class="btn btn-c">View LinkedIn Profile →</a>
-          <a href="/research.html" class="btn btn-g">View Research →</a>
-        </div>
+    <div class="cv-fallback au d1">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:20px">Status · Updating</div>
+      <h2 style="font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2">Currently being prepared<br>for public release.</h2>
+      <p style="font-size:15px;color:var(--text-mid);line-height:1.7;max-width:520px;margin:0 auto 32px">A full showcase CV — covering my clinical hardware background, neuro-engineering research, and The Science Blueprint — will be available here for download shortly.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="https://www.linkedin.com/in/ngabonziramarvin" target="_blank" class="btn btn-c">View LinkedIn ↗</a>
+        <a href="/research.html" class="btn btn-g">View Research →</a>
       </div>
     </div>
   </div>
