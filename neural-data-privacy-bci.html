@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Owns the Data Decoded from Your Brain? — Marvin Ngabonzira</title>
+<meta name="description" content="As consumer BCIs approach the market, neural data privacy law is nowhere near ready. A fictional company called MindSync shows how this goes wrong.">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.post-hero{padding:80px 0 56px;border-bottom:1px solid var(--border)}
+.post-hero .back{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;transition:color 0.2s}
+.post-hero .back:hover{color:var(--cyan)}
+.post-hero .back::before{content:'←'}
+.post-type{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+.post-title{font-size:clamp(30px,5vw,56px);font-weight:900;letter-spacing:-0.03em;line-height:1.05;max-width:760px;margin-bottom:20px}
+.post-meta{font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:0.08em;display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+
+/* Article body */
+.post-body{max-width:680px;padding:56px 0}
+.post-body h2{font-size:22px;font-weight:700;margin:40px 0 14px;letter-spacing:-0.01em}
+.post-body h3{font-size:17px;font-weight:600;margin:28px 0 10px;color:var(--text-mid)}
+.post-body p{font-size:16.5px;line-height:1.82;margin-bottom:22px;color:var(--text-mid)}
+.post-body p strong{color:var(--text);font-weight:600}
+.post-body blockquote{border-left:3px solid var(--cyan);padding:16px 24px;margin:32px 0;background:var(--surface)}
+.post-body blockquote p{font-size:17px;font-style:italic;color:var(--text);margin:0}
+.post-body ul,.post-body ol{margin:16px 0 22px 24px;color:var(--text-mid)}
+.post-body li{font-size:16px;line-height:1.75;margin-bottom:6px}
+.post-body .note{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--magenta);padding:20px 24px;margin:32px 0}
+.post-body .note p{margin:0;font-size:14px;color:var(--text-mid)}
+.post-body .note strong{color:var(--magenta)}
+.post-body hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+
+/* Related */
+.post-related{border-top:1px solid var(--border);padding:48px 0}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+.rel-card{background:var(--surface);border:1px solid var(--border);padding:20px 22px;display:block;transition:all 0.3s}
+.rel-card:hover{background:var(--surface2);border-color:rgba(0,229,255,0.2)}
+.rel-type{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px}
+.rel-title{font-size:14px;font-weight:700;line-height:1.3;color:var(--text)}
+
+@media(max-width:768px){.related-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="container">
+    <div class="post-hero">
+      <a href="/blog.html" class="back">Back to Blog</a>
+      <div class="post-type">Essay · Neural Privacy · Expanded from LinkedIn</div>
+      <h1 class="post-title au">Who Owns the Data Decoded from Your Brain?</h1>
+      <div class="post-meta au d1">
+        <span>March 2026</span>
+        <span>12 min read</span>
+        <span class="tag tag-c">BCI</span>
+        <span class="tag tag-c">Neural Privacy</span>
+        <span class="tag tag-c">Data Protection</span>
+      </div>
+    </div>
+
+    <article class="post-body au d2">
+
+      <p>This essay grew out of a LinkedIn post that started as a simple question: <strong>"Is your brain data private?"</strong> Three days of reading GDPR text, BCI company terms of service, and neuroscience papers later, the answer is: technically yes, practically no, and the window where we can fix that is closing faster than anyone is discussing.</p>
+
+      <p>I want to walk you through what I found, and why I built a fictional company to do it.</p>
+
+      <h2>The Setup: Meet MindSync Corp.</h2>
+
+      <p>To understand the problem concretely, I created a hypothetical consumer BCI company — <strong>MindSync Corp.</strong> — whose product sits somewhere between a premium EEG headset and a Neuralink-lite. It reads brain signals, interprets your cognitive state, and adapts your digital environment accordingly. Focus mode. Sleep tracking. Emotion calibration. All the features that would actually sell.</p>
+
+      <p>MindSync is not real. But its business model is entirely plausible. And when you trace the data flows that would exist in a product like this, the regulatory picture becomes alarming.</p>
+
+      <div class="note">
+        <p><strong>Note:</strong> This essay draws from my technical report TSB-TR-2026-002, published on Zenodo. The report contains the full framework; this piece is the accessible version. If you want the citations and methodology, the Zenodo link is in the Research section.</p>
+      </div>
+
+      <h2>What Neural Data Actually Is</h2>
+
+      <p>Most privacy law thinks about data in categories: name, address, health record, financial record. Neural data doesn't fit cleanly into any of these.</p>
+
+      <p>When a BCI reads your brain, it's capturing <strong>electroencephalographic (EEG) signals</strong> — voltage fluctuations across your scalp produced by millions of neurons firing. From those signals, with enough processing, you can infer:</p>
+
+      <ul>
+        <li>Your current emotional state (arousal, valence)</li>
+        <li>Cognitive load — how hard your brain is working</li>
+        <li>Sleep staging and quality</li>
+        <li>Attentional focus — what you're actually paying attention to</li>
+        <li>In higher-resolution systems, specific imagined movements or words</li>
+      </ul>
+
+      <p>This is not metadata. This is not behavioural inference. This is a direct readout of your mental state. It's the most intimate data type that will ever exist.</p>
+
+      <blockquote>
+        <p>"Neural data is the data type where the distinction between 'what you do' and 'what you are' collapses."</p>
+      </blockquote>
+
+      <h2>The Regulatory Gap</h2>
+
+      <p>GDPR, HIPAA, and CCPA were written before consumer BCIs were a product category. Their definitions of sensitive personal data include race, religion, health data, and biometric data — but <strong>neural data is not explicitly named</strong> in any major data protection framework as of early 2026.</p>
+
+      <p>Some jurisdictions are trying to catch up. Colorado and California have introduced draft neural data provisions. Chile amended its constitution to include "neurorights" in 2021, becoming the first country to do so. But these are exceptions, and they're years behind the hardware.</p>
+
+      <p>In the MindSync scenario, the data is being collected, processed on-device, and then a subset is uploaded to cloud servers for "personalisation." Nothing in that sentence is illegal under current frameworks in most jurisdictions. The terms of service you clicked through on setup transferred those rights to the company.</p>
+
+      <h2>Three Threat Vectors That Aren't Science Fiction</h2>
+
+      <p><strong>1. Passive inference at scale.</strong> Advertisers already buy behavioural data. If MindSync sells anonymised aggregate neural-state data to advertisers — "users in focus mode respond 40% better to this ad category" — that's a business model that doesn't require selling individual data, but still extracts value from collective neural patterns.</p>
+
+      <p><strong>2. Employer and insurance discrimination.</strong> If cognitive state data is captured over months, it creates longitudinal profiles of mental health, stress levels, and attentional capacity. In an employment or insurance context, that data is worth a great deal.</p>
+
+      <p><strong>3. State surveillance.</strong> This one is less speculative than it sounds. EEG-based "lie detection" has been trialled in court systems. Neural authentication is being researched. The pathway from "wellness device" to "mandatory compliance tool" is shorter than most people assume.</p>
+
+      <h2>What a Privacy-by-Design Framework Looks Like</h2>
+
+      <p>The TSB-TR-2026-002 report proposes a layered framework. The core idea is that neural data should be treated like genomic data — with the same legal weight as your DNA — because the information it contains about your inner life is equally irreversible once disclosed.</p>
+
+      <p>The framework has three layers:</p>
+
+      <ol>
+        <li><strong>On-device processing by default.</strong> Raw neural signals should never leave the device. Only interpreted outputs (e.g., "focus level: high") should be transmittable, and only with explicit, revocable consent for each category.</li>
+        <li><strong>Temporal limits.</strong> Neural data should not be retained beyond the session unless the user explicitly opts in to longitudinal tracking, with a clear explanation of what that enables.</li>
+        <li><strong>Right to neural deletion.</strong> Any processed derivative of neural data — profiles, inferences, models trained on your data — should be deletable on request, not just the raw records.</li>
+      </ol>
+
+      <p>None of this is technically complicated to implement. It's a policy problem, not an engineering one. Which means it's a problem that waits until a scandal forces it.</p>
+
+      <h2>Why I'm Writing About This as an Engineering Student</h2>
+
+      <p>I started The Science Blueprint because I believe the engineers who build these systems need to understand their societal implications before someone else has to clean up the consequences.</p>
+
+      <p>I'm going to be one of those engineers. I want to work on BCIs. And I want to do that with a clear view of what I'm actually building — not just the elegant problem of decoding neural signals, but the full stack of what happens to that data once it leaves the device.</p>
+
+      <p>If you're an engineer reading this: the ethical architecture of a product is as much your responsibility as the signal processing pipeline. This is not a soft issue. It's a design decision.</p>
+
+      <hr>
+
+      <p style="font-size:14px;color:var(--text-dim)"><strong style="color:var(--text-mid)">References:</strong> Full citations available in TSB-TR-2026-002 on Zenodo (DOI: 10.5281/zenodo.XXXXXXX). Key sources: Ienca & Haselager (2016) on cognitive liberty; Colorado SB23-290; Chilean Constitutional Amendment 2021; GDPR Article 9 special categories analysis.</p>
+
+    </article>
+
+    <!-- RELATED -->
+    <div class="post-related">
+      <div class="label">Keep reading</div>
+      <div class="related-grid">
+        <a href="/research.html" class="rel-card">
+          <div class="rel-type">Technical Report</div>
+          <div class="rel-title">TSB-TR-2026-002: Full Report on Zenodo →</div>
+        </a>
+        <a href="/posts/twenty-watt-brain.html" class="rel-card">
+          <div class="rel-type">Essay · Bio vs AI</div>
+          <div class="rel-title">Why Your 20-Watt Brain Still Beats a Data Centre →</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script src="/assets/nav.js"></script>
+</body>
+</html>
