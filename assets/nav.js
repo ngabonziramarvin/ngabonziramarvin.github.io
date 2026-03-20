@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="foot-inner">
                 <div class="foot-brand">THE SCIENCE <span>BLUEPRINT</span></div>
                 <div class="foot-links">
-                    <a href="https://youtube.com/@thescienceblueprint" target="_blank">YouTube</a>
+                    <a href="https://youtube.com/@myscienceblueprint" target="_blank">YouTube</a>
                     <a href="https://linkedin.com/in/ngabonziramarvin" target="_blank">LinkedIn</a>
-                    <a href="https://ngabonziramarvin.substack.com" target="_blank">Substack</a>
+                    <a href="https://myscienceblueprint.substack.com" target="_blank">Substack</a>
                     <a href="https://www.researchgate.net/profile/Marvin-Ngabonzira" target="_blank">ResearchGate</a>
                 </div>
                 <div class="foot-copy">© 2026 · MARVIN NGABONZIRA · KAMPALA, UGANDA</div>
