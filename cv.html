@@ -1,18 +1,156 @@
-<div class="container">
-  <div class="cv-fallback au d1">
-    <div class="label">Document</div>
-    <h2 style="margin-bottom: 24px;">Curriculum Vitae</h2>
-    <p style="margin-bottom: 32px;">Download my full professional and research history including clinical hardware experience and academic publications.</p>
-    
-    <!-- PDF DOWNLOAD BUTTON -->
-    <a href="/assets/papers/Marvin_Ngabonzira_CV.pdf" download class="btn btn-c" style="padding: 18px 40px;">Download PDF (Latest) ↓</a>
-    
-    <div style="margin-top: 60px; border-top: 1px solid var(--border); padding-top: 40px;">
-       <p style="font-size: 12px; font-family: var(--mono);">Digital Credentials</p>
-       <div style="margin-top: 16px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-         <span class="tag tag-g">ORCID: 0009-0000-2708-2825</span>
-         <span class="tag tag-g">Zenodo ID: ngabonziramarvin</span>
-       </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Marvin Ngabonzira</title>
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+/* CV SPECIFIC STYLING */
+.cv-container { max-width: 900px; margin: 40px auto; background: var(--surface); border: 1px solid var(--border); padding: 60px; position: relative; }
+.cv-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 40px; }
+.cv-name h1 { font-size: 48px; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 8px; }
+.cv-name p { font-family: var(--mono); font-size: 12px; color: var(--cyan); letter-spacing: 0.1em; }
+.cv-contact { text-align: right; font-family: var(--mono); font-size: 11px; line-height: 1.8; color: var(--text-mid); }
+.cv-contact a { color: var(--cyan); }
+
+.cv-section { display: grid; grid-template-columns: 80px 1fr; gap: 40px; margin-bottom: 50px; }
+.cv-num { font-family: var(--mono); font-size: 14px; color: var(--text-dim); }
+.cv-content h2 { font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 8px; display: inline-block; }
+
+.cv-item { margin-bottom: 30px; }
+.cv-item h3 { font-size: 16px; margin-bottom: 8px; color: var(--text); }
+.cv-meta { font-family: var(--mono); font-size: 10px; color: var(--cyan); margin-bottom: 12px; text-transform: uppercase; }
+.cv-desc { font-size: 14px; line-height: 1.6; color: var(--text-mid); }
+
+.skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.skill-cat h4 { font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px; }
+
+/* FAB for Download */
+.download-fab { position: fixed; bottom: 30px; right: 30px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+@media (max-width: 768px) {
+  .cv-container { padding: 30px 20px; }
+  .cv-header { flex-direction: column; gap: 20px; }
+  .cv-contact { text-align: left; }
+  .cv-section { grid-template-columns: 1fr; gap: 10px; }
+  .skill-grid { grid-template-columns: 1fr; }
+}
+
+/* PRINT MODE: Makes the CV look like a standard paper document when printed */
+@media print {
+  body { background: white; color: black; }
+  .cv-container { border: none; padding: 0; margin: 0; background: white; }
+  .nav-links, .download-fab, footer { display: none; }
+  .cv-name h1, .cv-num, .cv-meta { color: black !important; }
+  .cv-desc { color: #333 !important; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- DOWNLOAD BUTTON -->
+  <div class="download-fab">
+    <a href="/assets/papers/Marvin_Ngabonzira_CV.pdf" download class="btn btn-c">Download PDF ↓</a>
+  </div>
+
+  <div class="container">
+    <div class="cv-container au">
+      
+      <!-- HEADER -->
+      <header class="cv-header">
+        <div class="cv-name">
+          <h1>Marvin<br>Ngabonzira</h1>
+          <p>Neuro-Engineering Researcher & Science Communicator</p>
+        </div>
+        <div class="cv-contact">
+          Kampala, Uganda<br>
+          <a href="mailto:ngabonziramarvin@gmail.com">ngabonziramarvin@gmail.com</a><br>
+          ORCID: 0009-0000-2708-2825<br>
+          <a href="https://myscienceblueprint.substack.com">myscienceblueprint.substack.com</a>
+        </div>
+      </header>
+
+      <!-- 01 PROFILE -->
+      <section class="cv-section">
+        <div class="cv-num">01</div>
+        <div class="cv-content">
+          <h2>Profile</h2>
+          <p class="cv-desc">Biomedical & Mechatronics Engineering student at Kyambogo University obsessed with <strong>the gray area between biological brains and silicon machines</strong>. Transitioned from maintaining clinical diagnostic hardware to reverse-engineering intelligence itself. Founder of The Science Blueprint. Currently building toward graduate research in South Korea.</p>
+        </div>
+      </section>
+
+      <!-- 02 RESEARCH -->
+      <section class="cv-section">
+        <div class="cv-num">02</div>
+        <div class="cv-content">
+          <h2>Research & Publications</h2>
+          <div class="cv-item">
+            <div class="cv-meta">Technical Report · Zenodo · DOI: 10.5281/zenodo.19058469</div>
+            <h3>Neural Data Privacy and Emerging Surveillance Risk of BCIs</h3>
+            <p class="cv-desc">Analyzes surveillance vectors through a fictional company case study, proposes a layered framework for neural privacy by design, and assesses regulatory gaps.</p>
+          </div>
+          <div class="cv-item">
+            <div class="cv-meta">Undergraduate Project · 2026 (In Progress)</div>
+            <h3>Adaptive Motor-Imagery BCI Using Riemannian Geometry</h3>
+            <p class="cv-desc">Developing a session-adaptive EEG classifier leveraging Riemannian geometry for subject-independent decoding. Target: IEEE TNSRE.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 EXPERIENCE -->
+      <section class="cv-section">
+        <div class="cv-num">03</div>
+        <div class="cv-content">
+          <h2>Experience</h2>
+          <div class="cv-item">
+            <div class="cv-meta">2025 — Present · Founder & Lead Creator</div>
+            <h3>The Science Blueprint</h3>
+            <p class="cv-desc">Translating complex BCI hardware and neural decoding algorithms for a global audience through long-form video essays and technical reports.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 EDUCATION -->
+      <section class="cv-section">
+        <div class="cv-num">04</div>
+        <div class="cv-content">
+          <h2>Education</h2>
+          <div class="cv-item">
+            <div class="cv-meta">Kyambogo University · Expected 2027</div>
+            <h3>BSc. Biomedical & Mechatronics Engineering</h3>
+            <p class="cv-desc">Focus: Signal Processing, Control Systems, Neural Engineering.</p>
+          </div>
+          <div class="cv-item">
+            <div class="cv-meta">Kyambogo University · Completed</div>
+            <h3>Diploma in Biomedical Engineering</h3>
+            <p class="cv-desc">Hands-on experience maintaining hospital diagnostic systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ARSENAL -->
+      <section class="cv-section">
+        <div class="cv-num">05</div>
+        <div class="cv-content">
+          <h2>Technical Arsenal</h2>
+          <div class="skill-grid">
+            <div class="skill-cat">
+              <h4>Hardware</h4>
+              <p class="cv-desc">Arduino, Embedded C, Biomedical Instrumentation, Sensor Integration.</p>
+            </div>
+            <div class="skill-cat">
+              <h4>Software</h4>
+              <p class="cv-desc">Python, MATLAB, MNE-Python, MOABB, pyRiemann.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
 </div>
+<script src="/assets/nav.js"></script>
+</body>
+</html>
